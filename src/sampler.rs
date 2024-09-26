@@ -3,6 +3,9 @@ use statrs::distribution::MultivariateNormal;
 
 pub struct State<const N_DIM: usize> {
     // Fill this
+    rng: StdRng,
+    pub arr: [f64; N_DIM],
+    proposal_distribution: MultivariateNormal,
 }
 
 fn log_likelihood<const N_DIM: usize>(arr: &[f64]) -> f64 {
